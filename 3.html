@@ -8,15 +8,31 @@
 <body>
   <h1><a href="index.html">쏘니의 코딩공부</a></h1>
  <input id="night_day" type="button" value="night" onclick="
- if(document.querySelector('#night_day').value === 'night'){
-   document.querySelector('body').style.backgroundColor='black';
-   document.querySelector('body').style.color='white';
-   document.querySelector('#night_day').value='day';
+ var target = document.querySelector('body');
+ if(this.value === 'night'){
+   target.style.backgroundColor='black';
+   target.style.color='white';
+   this.value='day';
+
+   var alist = document.querySelectorAll('a');
+   var i = 0;
+   while(i < alist.length){
+     alist[i].style.color = 'powderblue' ;
+     i = i + 1;
+   }
 } else{
-document.querySelector('body').style.backgroundColor='white';
-document.querySelector('body').style.color='black';
-document.querySelector('#night_day').value='night';
-}">
+target.style.backgroundColor='white';
+target.style.color='black';
+this.value='night';
+
+var alist = document.querySelectorAll('a');
+var i = 0;
+while(i < alist.length){
+  alist[i].style.color = 'black' ;
+  i = i + 1;
+ }
+}
+">
 <div id="grid">
   <ol>
     <li><a href="1.html">HTML</a></li>
